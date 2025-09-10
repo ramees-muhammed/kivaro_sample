@@ -1,0 +1,115 @@
+/* careers -------------------------------------------------------.............................................................................> */
+
+/* Build the future section -------------------------------------------------------.............................................................................> */
+
+.career_section_banner {
+  height: calc(100dvh - 94px);
+  display: flex;
+  align-items: center;
+  /* position: relative; */
+}
+.career_section_banner_right {
+  height: 796px;
+  width: 50%;
+  background-image: url("/assets/about-background-img.png");
+  background-size: cover; /* cover the whole area */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat; /* prevent tiling */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0px;
+  position: relative;
+  left: 70px;
+}
+
+/* @media (min-width:769px) and (max-width: 1200px){
+  .career_section_banner_right{
+    height: 100%;
+  }
+} */
+
+.career_section_banner_left {
+  position: relative;
+  right: 65px;
+}
+/* Build the future section -------------------------------------------------------.............................................................................> */
+
+/* careers connect section -------------------------------------------------------.............................................................................> */
+.career_connect_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 150px 0px;
+}
+
+.career_connect_wrapper {
+  border-width: 1px;
+  opacity: 1;
+  border-radius: 8px;
+  background-color: #ffffff14;
+  padding: 60px 100px;
+  border: 1px solid var(--icon-color);
+}
+
+.banner-btns {
+  display: flex;
+  gap: 24px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+
+  @media (max-width: 1080px) {
+    margin-top: 53px;
+    flex-direction: column;
+  }
+}
+
+.banner-btn {
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: var(--button-font-color);
+  padding: 12px 20px;
+
+  background-color: transparent;
+  border: 2px solid var(--icon-color);
+}
+.banner-btn:hover {
+  background-color: var(--icon-color);
+  color: var(--icon-box--color);
+}
+.banner-btn.primary-btn {
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.banner-btn.primary-btn:hover {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .career_section_banner {
+    display: none;
+  }
+  .career_connect_container {
+    display: none;
+  }
+  .banner-btns {
+    margin: 93px 0px;
+  }
+  .career_connect_wrapper_mobile {
+    /* height: 100%;
+    margin: 63px 0px; */
+    height: 100%;
+    display: flex;
+    margin: 63px 0px;
+    flex-direction: column;
+  }
+}
+/* careers connect section -------------------------------------------------------.............................................................................> */

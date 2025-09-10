@@ -1,0 +1,626 @@
+/* home banner ------------------------------------------------------------ ----------------------*/
+html {
+  scroll-behavior: smooth;
+}
+#banner-section {
+  height: calc(100dvh - 94px);
+  width: 100%;
+  position: relative;
+
+  @media (max-width: 1080px) {
+    height: 100%;
+  }
+}
+
+.banner_shadaw {
+  position: absolute;
+  bottom: -25%;
+  left: 0;
+
+  width: 601px;
+  height: 555px;
+
+  z-index: -1;
+
+  @media (min-width: 1440px) {
+    width: 901px;
+    height: 855px;
+  }
+
+  @media (max-width: 1080px) {
+    width: 100%;
+  }
+}
+.banner_shadaw img {
+  width: 100%;
+}
+
+.banner-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1080px) {
+    flex-direction: column-reverse;
+    gap: 36px;
+    padding-top: 48px;
+  }
+}
+
+.banner-image {
+  position: relative;
+  left: 50px;
+  width: 652px;
+  height: 652px;
+
+  @media (max-width: 1080px) {
+    left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.banner-image img {
+  @media (max-width: 1080px) {
+    width: 100%;
+  }
+}
+
+.banner-contents {
+  position: relative;
+  right: 50px;
+
+  @media (max-width: 1080px) {
+    right: 0px;
+  }
+}
+
+.banner-contents p {
+  margin-top: 16px;
+  text-align: start;
+}
+.banner-contents .desktop-home-banner-content {
+  @media (min-width: 1081px) and (max-width: 1400px) {
+    margin-top: 16px;
+  }
+  @media (max-width: 768px) and (max-width: 1080px) {
+    margin-top: 16px;
+    display: none;
+  }
+}
+
+.banner-btns {
+  display: flex;
+  gap: 24px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+
+  @media (max-width: 1080px) {
+    margin-top: 53px;
+    flex-direction: column;
+  }
+}
+
+.banner-btn {
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: var(--button-font-color);
+  padding: 12px 20px;
+  text-wrap: nowrap;
+  background-color: transparent;
+  border: 2px solid var(--icon-color);
+}
+.banner-btn:hover {
+  background-color: var(--icon-color);
+  color: var(--icon-box--color);
+}
+.banner-btn.primary-btn {
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.banner-btn.primary-btn:hover {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .mobile-home-banner-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  .consultation_wrapper_mobile .banner-btn.primary-btn {
+    width: 130px;
+  }
+}
+
+/* home banner ------------------------------------------------------------ ----------------------*/
+
+/* home services ------------------------------------------------------------ ----------------------*/
+
+.services_section {
+  display: grid;
+  place-items: center;
+  gap: 75px;
+
+  @media (max-width: 768px) {
+    gap: 29px;
+  }
+
+}
+
+.list_services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 52px;
+
+  /* Mobile devices (up to 767px) */
+  @media (max-width: 768px) {
+    gap: 0px;
+  }
+}
+
+.service {
+  width: calc(33.33% - 52px);
+  display: grid;
+  gap: 25px;
+
+  @media (max-width: 1080px) {
+    width: calc(50% - 52px);
+    gap: 5px;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100%);
+    gap: 5px;
+  }
+}
+
+.service_head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.service_head h2 {
+  flex-wrap: nowrap;
+  font-size: clamp(12px, 4vw, 18px);
+}
+
+.icon_box {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: var(--white);
+
+  display: grid;
+  place-items: center;
+}
+
+.icon_box svg path {
+  fill: var(--icon-box--color);
+}
+
+/* Premium animation for icons inside icon_box */
+.icon_box svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.service_head p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: var(--white);
+}
+
+.service_body p {
+  text-align: justify;
+}
+@media (max-width: 768px) {
+  .theme-bg-section {
+    background-color: transparent;
+  }
+  .icon_box {
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    background-color: var(--white);
+
+    display: grid;
+    place-items: center;
+  }
+  .icon_box svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Glow + scale on hover */
+.icon_box:hover svg {
+  transform: scale(1.2) rotate(0deg);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+
+  @media (max-width: 768px) {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  }
+}
+
+/* When service is active (accordion open) */
+.service.active .icon_box svg {
+  transform: scale(1.3) rotate(0deg);
+  filter: drop-shadow(0 0 10px var(--icon-box--color));
+
+  @media (max-width: 768px) {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 10px var(--icon-box--color));
+  }
+}
+
+.service_arrow {
+  display: none;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  @media (max-width: 767px) {
+    display: block;
+    color: var(--white);
+  }
+}
+
+.service_arrow svg.open {
+  transform: rotate(180deg);
+}
+/* Default (dark mode) → white */
+.service_arrow path {
+  stroke: var(--heading-color);
+}
+
+/* Light theme → black */
+[data-theme="light"] .service_arrow path {
+  stroke: black;
+}
+
+/* Rotate when active */
+.service.active .service_arrow {
+  transform: rotate(180deg);
+}
+/* home services ------------------------------------------------------------ ----------------------*/
+
+/* whay kivaro labs (development)  ---------------------------------------------------------------> */
+
+.development_section_container {
+  display: flex;
+  justify-content: center;
+}
+.development-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  left: 5%;
+}
+
+.development-content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.development-content-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+.development-content-section .dot {
+  width: 20px;
+  height: 20px;
+  background: var(--white);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.development-img-section {
+  position: relative;
+  right: 5%;
+  height: 644px;
+  width: 644px;
+}
+
+@media (max-width: 1080px) {
+  .development_section_container {
+    flex-direction: column;
+    gap: 36px;
+    padding-top: 48px;
+  }
+  .development-content {
+    left: 0%;
+  }
+  .development-img-section {
+    right: 0%;
+    width: 100%;
+    height: 100%;
+  }
+  .development-img-section img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1092px) and (min-width: 769px) {
+  .development_section_container {
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    padding-top: 48px;
+  }
+
+  .development-content-list {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .development-content {
+    left: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .development-content-section {
+    justify-content: flex-start;
+    text-align: left;
+    /* max-width: 700px; */
+    width: calc(50% - 20px);
+  }
+
+  .development-img-section {
+    width: 70%; /* shrink */
+    height: auto; /* keep aspect ratio */
+    max-width: 500px;
+    margin: 0 auto; /* center horizontally */
+  }
+
+  .development-img-section img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* whay kivaro labs -mobile (development)  ---> */
+@media (max-width: 768px) {
+  .development_section_container {
+    display: none;
+  }
+
+  .development_section_mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .development-content-section-mobile {
+    align-items: center;
+  }
+  .development-content-list-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .development-content-list-mobile .dot {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    background: var(--white);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .development-content-list-mobile p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: var(--white);
+  }
+
+  .accordion-body {
+    display: none;
+    padding-left: 30px;
+  }
+  .accordion-body p {
+    font-size: 16px;
+    font-family: var(--dm-sans);
+    font-weight: 200;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+  }
+  .accordion-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .arrow {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  .arrow svg {
+    transition: transform 0.3s ease;
+    color: var(--white);
+  }
+  .arrow svg path {
+    /* fill:antiquewhite; */
+    stroke: var(--heading-color);
+  }
+  .arrow svg.open {
+    transform: rotate(180deg);
+  }
+}
+/* whay kivaro labs (development)  ---------------------------------------------------------------> */
+/* sectors (solution)  ---------------------------------------------------------------------------> */
+
+@media (max-width: 768px) {
+  .solution_header {
+    display: none;
+  }
+}
+
+.solutions_wrapper {
+  padding: 60px 20px;
+
+  color: #fff;
+  text-align: center;
+}
+
+.solution_header p {
+  max-width: 650px;
+  margin: 20px auto 40px;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.solutions_wrapper_2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.solutions_container {
+  width: 854px;
+  /* height: 921px; */
+
+  gap: 66px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.solution_card {
+  width: calc(33.33% - 44px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  overflow: hidden;
+
+  @media (min-width: 768px) and (max-width: 1080px) {
+    width: calc(50% - 110px);
+  }
+}
+
+.solution_card img {
+  width: 100%;
+  border-radius: 16px;
+  /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); */
+  transition: transform 0.3s ease;
+}
+.solution_card img:hover {
+  transform: translateY(-6px);
+}
+.solution_card p {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.carousel-inner {
+  padding: 20px 0;
+}
+.carousel-img {
+  max-width: 260px;
+  border-radius: 20px;
+  /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); */
+}
+.carousel-caption-text {
+  font-size: 16px;
+  margin-top: 12px;
+  font-weight: 400;
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  /* bottom: 0; */
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-right: 15%;
+  /* margin-bottom: -1rem; */
+  margin-left: 15%;
+  list-style: none;
+}
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--white);
+  opacity: 0.5;
+}
+.carousel-indicators .active {
+  opacity: 1;
+}
+/* sectors (solution)  ---------------------------------------------------------------------------> */
+
+/*  consultation section ------------------------------------------------------------------------->*/
+
+#consultation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* margin-bottom: 150px; */
+}
+.consultation_wrapper {
+  border-width: 1px;
+  opacity: 1;
+  border-radius: 8px;
+  border: 1px solid var(--nav-link);
+  background-color: #ffffff14;
+  padding: 75px 75px;
+}
+
+@media (max-width: 768px) {
+  .mobile-btn {
+    text-decoration: none;
+    border: none;
+    text-align: center;
+  }
+  .consultation_wrapper {
+    display: none;
+  }
+  .consultation_wrapper_mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .consultation_wrapper_mobile h1 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/*  consultation section ------------------------------------------------------------------------->*/

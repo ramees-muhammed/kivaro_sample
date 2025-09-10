@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Kivaro Labs - Let’s Build Something"
+    />
+    <title>Contact | Kivaro Labs</title>
+
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      })();
+    </script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/icons/kivaro-favicon.png"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Toastify CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/utilities.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/css/blob.css" />
+  </head>
+  <body>
+    
+    <div id="header"></div>
+
+    <div class="blob_container">
+      <div class="blur blob1">
+        <div class="blob"></div>
+      </div>
+
+      <div class="blur blob2">
+        <div class="blob"></div>
+      </div>
+    </div>
+
+    <main class="section-padding section-gap">
+      <section id="contactForm" class="contact-form-section wrapper-section">
+       <div>
+           <div class="contact-banner-wrapper">
+          <div>
+            <h1>
+              Let’s Build Something <br />
+              Great Together
+            </h1>
+
+            <p>
+              Whether you’ve got a challenge, an idea, or a roadmap— 
+              we’d love to hear from you. <br> Reach out and let’s create 
+              something impactful.
+            </p>
+          </div>
+
+          <div>
+            <img src="/assets/contact-banner-img.png" alt="" />
+          </div>
+        </div>
+
+        <!-- mobile-->
+        <div class="contact-banner-wrapper-mobile d-md-none">
+          <h1>Get in Touch</h1>
+
+          <p class="mt-4">Let’s talk about your next project.</p>
+        </div>
+
+        <!-- Form areaa-->
+        <!-- <div class="container"> -->
+        <div style="max-width: 919px">
+          <div class="conatct-form-container">
+            <form class="row form-wrapper">
+              <!-- FULLNAME-->
+              <div class="col-md-6 mt-3">
+            <label for="inputFullname" class="form-label">Name*</label>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            id="inputFullname"
+            placeholder="Enter fullname"
+          />
+              </div>
+
+              <!-- EMAIL-->
+              <div class="col-md-6 mt-3">
+                <label for="inputEmail4" class="form-label">Email*</label>
+          <input
+            type="email"
+             name="email"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="Enter email address"
+          />
+              </div>
+
+              <!-- PHONE NUMBER-->
+              <div class="col-md-6 mt-3">
+                <label for="inputPhoneNumber" class="form-label"
+                  >Phone number</label
+                >
+                <input
+            type="text"
+              name="phone"
+            class="form-control"
+            id="inputPhoneNumber"
+            placeholder="Enter phone number"
+          />
+              </div>
+
+              <!-- COMPANY-->
+              <div class="col-md-6 mt-3">
+                <label for="inputcomapanyName" class="form-label"
+                  >Company</label
+                >
+                <input
+            type="text"
+            name="company"
+            class="form-control"
+            id="comapanyName"
+            placeholder="Enter company name"
+          />
+              </div>
+
+              <!-- MESSAGE-->
+              <div class="col-12 mt-3">
+                <label for="inputMessage" class="form-label">Message</label>
+                <textarea
+            rows="5"
+            name="message"
+            class="form-control"
+            id="inputMessage"
+            placeholder="How we can help you?"
+          ></textarea>
+              </div>
+
+              <div
+                class="col-12 banner-btns d-flex justify-content-center mt-5"
+              >
+                <button class="banner-btn primary-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+       </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- jQuery + Load Components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    
+<!-- Toastify JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<!-- lucid icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+       <!-- API Helpers -->
+
+
+    <script>
+  $(function () {
+    if (location.hash) {
+      const $target = $(location.hash);
+      if ($target.length) {
+        const offset = ($(".header").outerHeight() || 0) + 8;
+        $("html, body").stop().animate({
+          scrollTop: $target.offset().top - offset
+        }, 500, "swing");
+      }
+    }
+  });
+</script>
+
+    <!-- Load Components -->
+    <script>
+      $(function () {
+        $("#header").load("/components/header.html");
+        $("#footer").load("/components/footer.html");
+      });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

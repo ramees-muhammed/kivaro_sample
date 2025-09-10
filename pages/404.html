@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Page not found - Kivaro Labs" />
+    <title>404 | Kivaro Labs</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/utilities.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/blob.css" />
+    <link rel="stylesheet" href="/css/404.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="blob_container">
+      <div class="blur blob1">
+        <div class="blob"></div>
+      </div>
+
+      <div class="blur blob2">
+        <div class="blob"></div>
+      </div>
+    </div>
+    <main>
+      <section class="error-page-container wrapper-section">
+        <div class="error-page-wrapper">
+          <img
+            class="w-100"
+            src="/assets/404 Error-page.png   "
+            alt="Page not found illustration"
+          />
+          <div class="error-contents">
+            <h1>Page not found!</h1>
+            <button onclick="history.back()" class="banner-btn primary-btn">
+              Back
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Load Components -->
+    <script>
+      $(function () {
+        $("#header").load("/components/header.html");
+        $("#footer").load("/components/footer.html");
+      });
+    </script>
+  </body>
+</html>

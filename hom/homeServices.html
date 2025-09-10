@@ -1,0 +1,71 @@
+<section class="services_section wrapper-section theme-bg-section">
+  <div>
+    <h1>What we do</h1>
+  </div>
+
+  <div class="list_services"></div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="module">
+  import { serviceData } from "./utils/gridCardServices.js";
+
+  $(document).ready(function () {
+    const $list = $(".list_services");
+
+    // Render services
+    $.each(serviceData, function (index, service) {
+      const $service = $(`
+        <div class="service">
+          <div class="service_head">
+            <div class="icon_box">${service.icon}</div>
+            <p style="color: var( --white)"><b><strong>${service.title}</strong></b></p>
+            <div class="service_arrow" >
+             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M2.33464 4.90958L6.17682 8.75182C6.39656 8.96842 6.69272 9.08984 7.0013 9.08984C7.30989 9.08984 7.60604 8.96842 7.82579 8.75182L11.668 4.90958" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          </div>
+          <div class="service_body">
+            <p>${service.description}</p>
+          </div>
+        </div>
+      `);
+
+      $list.append($service);
+    });
+
+    // Accordion behavior only for mobile (≤767px)
+    function setAccordionBehavior() {
+      if ($(window).width() <= 767) {
+        $(".service_body").hide(); // collapse all initially
+
+        $(".service_head")
+          .off("click")
+          .on("click", function () {
+            const $parent = $(this).parent(".service");
+            const $body = $(this).next(".service_body");
+
+            if ($body.is(":visible")) {
+              $body.slideUp();
+              $parent.removeClass("active");
+            } else {
+              $(".service_body").slideUp();
+              $(".service").removeClass("active");
+              $body.slideDown();
+              $parent.addClass("active");
+            }
+          });
+      } else {
+        $(".service_body").show(); // show all in desktop view
+        $(".service_head").off("click"); // disable accordion
+      }
+    }
+
+    // Run on load + resize
+    setAccordionBehavior();
+    $(window).on("resize", function () {
+      setAccordionBehavior();
+    });
+  });
+</script>

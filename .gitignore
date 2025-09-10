@@ -1,0 +1,39 @@
+# Node & package manager
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output / dist
+dist/
+build/
+*.log
+
+# Environment & secret files
+.env
+.env.local
+.env.*.local
+
+# IDEs & editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Temp / cache files
+*.tmp
+*.temp
+.cache/
+*.swp
+*.swo
+
+# Deployment
+*.zip
+*.tar.gz
+
+# Optional: if using TypeScript or tools
+*.tsbuildinfo

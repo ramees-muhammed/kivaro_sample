@@ -1,0 +1,117 @@
+<section class="banner wrapper-section">
+  <div class="blob_container">
+    <div class="blur blob1">
+      <div class="blob"></div>
+    </div>
+
+    <div class="blur blob2">
+      <div class="blob"></div>
+    </div>
+  </div>
+
+  <div class="banner-wrapper">
+    <!-- dark mode img -->
+    <!-- src="/assets/banner-img.png" -->
+    <div class="banner-image">
+      <img
+        src="../assets/banner-img.png"
+        alt="home banner img"
+        id="bannerThemeImage"
+      />
+    </div>
+    <!-- white mod img -->
+    <!-- <div>
+      <img
+        src="/assets/white-mod/home-banner-light-theme.png"
+        alt="home banner img"
+      />
+    </div> -->
+    <div class="banner-contents" style="max-width: 604px">
+      <div>
+        <h1>
+          Code the Future.<br />
+          Lead the Change.
+        </h1>
+        <p class="desktop-home-banner-content text-md-start">
+          Kivarolabs creates smart software solutions for businesses by
+          simplifying complex challenges, enabling your business to grow faster.
+        </p>
+        <p class="mobile-home-banner-content d-md-none text-start">
+          We build smart, scalable software that <br />
+          helps your business grow fast and stay <br />
+          ahead.
+        </p>
+      </div>
+
+      <div class="banner-btns mt-5">
+        <button class="banner-btn primary-btn" data-action="start">
+          Start Your Project
+        </button>
+        <button class="banner-btn" data-action="talk">
+          Talk to Our Experts
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).on("click", ".banner-btn[data-action]", function () {
+    const action = $(this).data("action");
+
+    if (action === "talk") {
+      // Replace with your business WhatsApp number
+      const whatsappNumber = "+91-7736277001"; 
+      const prefilledMessage = "Hello Kivarolabs, I'd like to talk to your experts.";
+      const whatsappURL =
+        "https://api.whatsapp.com/send?phone=" +
+        whatsappNumber +
+        "&text=" +
+        encodeURIComponent(prefilledMessage);
+
+      window.open(whatsappURL, "_blank"); // Open in new tab
+      return;
+    }
+
+    // Default (start project → contact page)
+    if (window.location.pathname !== "/contact") {
+      window.location.href = "/pages/contact.html#contactForm";
+      return;
+    }
+
+    // Already on contact page → smooth scroll
+    const $target = $("#contactForm");
+    if ($target.length) {
+      const offset = ($(".header").outerHeight() || 0) + 8;
+      $("html, body").animate(
+        { scrollTop: $target.offset().top - offset },
+        600,
+        "swing"
+      );
+    }
+  });
+</script>
+
+<!-- home banner theme img  -->
+<script>
+  function updateBannerImage() {
+    const theme = document.documentElement.getAttribute("data-theme");
+    const bannerImg = document.getElementById("bannerThemeImage");
+
+    if (theme === "light") {
+      bannerImg.src = "/assets/white-mod/home-banner-light-theme.png";
+    } else {
+      bannerImg.src = "/assets/banner-img.png";
+    }
+  }
+
+  // Run on page load
+  updateBannerImage();
+
+  // Run whenever theme changes (if you toggle data-theme)
+  const observer = new MutationObserver(updateBannerImage);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+</script>

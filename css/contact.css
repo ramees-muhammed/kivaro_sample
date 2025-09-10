@@ -1,0 +1,222 @@
+.contact-form-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.contact-banner-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1;
+}
+.contact-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* SVG Icon Animation */
+.contact-list-container div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Default SVG style */
+.contact-list-container svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+/* Trigger animation when hovering link */
+.contact-list-container a:hover + svg,
+.contact-list-container div:hover svg {
+  transform: scale(1.15);
+}
+
+.contact-list-container svg path {
+  fill: var(--icon-color);
+  transition: fill 0.3s ease;
+}
+
+/* Path animation on hover of parent link */
+.contact-list-container a:hover + svg path,
+.contact-list-container div:hover svg path {
+  animation: iconPulse 1.2s infinite ease-in-out;
+}
+
+/* Pulse effect */
+@keyframes iconPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+.contact-banner-wrapper h1 {
+  text-wrap: nowrap;
+}
+
+.contact-banner-wrapper p {
+  width: 70%;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+
+  @media (min-width: 769px) and (max-width: 922px) {
+    width: 95%;
+  }
+}
+
+.contact-banner-wrapper a {
+  text-decoration: none;
+  color: var(--paragraph-color);
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+.phone-numbers {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.contact-list-container div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact-banner-img {
+  display: grid;
+  place-items: center;
+}
+
+.conatct-form-container {
+  border: 1px solid var(--white);
+  opacity: 1;
+  border-width: 1px;
+  border-radius: 8px;
+  flex: 1;
+  /* max-width: 464px; */
+  /* max-height: 720px; */
+}
+
+.form-wrapper {
+  padding: 40px 45px;
+
+  @media (max-width: 768px) {
+    padding: 0px;
+  }
+}
+
+.form-label {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  color: #666666;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-control {
+  padding: 16px 16px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background-color: #ffffff14;
+  color: var(--white);
+  /* gap: 82px; */
+}
+
+:root[data-theme="light"] .form-control {
+  color: #000000d9; /* dark text while typing */
+  background-color: #ffffff14; /* clean white input background */
+  border: 1px solid #cccccc; /* subtle gray border */
+}
+/* keep same background when input is focused */
+.form-control:focus {
+  color: #ffffff;
+  background-color: #ffffff14;
+  border-color: #cccccc; /* optional: keep border consistent */
+  box-shadow: none; /* remove Bootstrap's blue glow */
+}
+.form-control::placeholder {
+  color: #666666;
+}
+.banner-btns {
+  display: flex;
+  gap: 24px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+
+  /* @media (max-width: 1080px) {
+    margin-top: 53px;
+    flex-direction: column;
+  } */
+}
+
+.banner-btn {
+  color: #ffffff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+
+  padding: 12px 53px;
+
+  background-color: transparent;
+  border: 2px solid #ffffff;
+}
+
+.banner-btn.primary-btn {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .contact_main {
+    padding: 0px 24px;
+    margin: 48px 0px;
+  }
+  .contact-banner-wrapper {
+    display: none;
+  }
+  .contact-banner-wrapper-mobile h1 {
+    font-size: 32px;
+    font-weight: 700;
+    font-style: Bold;
+    line-height: 40px;
+    letter-spacing: 0.5px;
+  }
+
+  /* .contact_main {
+        padding: 0px 24px;
+    } */
+  .conatct-form-container {
+    border: none;
+    max-width: none;
+  }
+
+  .banner-btns {
+    flex-direction: column;
+  }
+}

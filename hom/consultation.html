@@ -1,0 +1,59 @@
+<section class="consultation wrapper-section">
+  <div class="consultation_wrapper">
+    <div>
+      <h1>
+        Have a Vision? <br />
+        Let’s Turn It Into Software..
+      </h1>
+
+      <p class="mt-3">
+        We’ll help you validate, prototype, build, launch, and scale <br />
+        with a team that truly understands your goals.
+      </p>
+    </div>
+
+    <div class="banner-btns d-flex justify-content-center mt-5">
+      <button class="banner-btn primary-btn" data-action="start">
+        Book a Free Consultation
+      </button>
+      <button class="banner-btn" data-action="talk">
+        Share Your Requirements
+      </button>
+    </div>
+  </div>
+
+  <div class="consultation_wrapper_mobile d-md-none">
+    <h1>Got an Idea?</h1>
+    <button class="banner-btn primary-btn">
+      <a href="/pages/contact.html#contactForm" class="banner-btn mobile-btn"
+        >Let’s Talk</a
+      >
+    </button>
+  </div>
+</section>
+
+<script>
+  $(document).on("click", ".banner-btn[data-action]", function () {
+    const action = $(this).data("action");
+
+    // Always navigate to contact page first
+    if (window.location.pathname !== "/contact") {
+      // Redirect to contact page and preserve scroll target
+      window.location.href = "/pages/contact.html#contactForm";
+      return;
+    }
+
+    // Already on contact page → smooth scroll
+    const $target = $("#contactForm");
+    if ($target.length) {
+      const offset = ($(".header").outerHeight() || 0) + 8;
+      $("html, body").animate(
+        { scrollTop: $target.offset().top - offset },
+        600,
+        "swing"
+      );
+    }
+  });
+</script>
+
+
